@@ -7,7 +7,7 @@ const { MongoClient } = require("mongodb");
 
 // ================= CONFIG =================
 
-const APP_NAME = process.env.APP_NAME || "M5DEX";
+const APP_NAME = process.env.APP_NAME || "TONWON";
 const APP_URL = process.env.APP_URL;
 
 const MAINTAIN = process.env.MAINTAIN === "true";
@@ -91,6 +91,16 @@ async function startWorker() {
       console.log("🔥 JOB RECEIVED");
 
       const update = job.data;
+      if (msg.photo) {
+      const photo = msg.photo[msg.photo.length - 1];
+
+      console.log("=================================");
+      console.log("BANNER FILE ID:");
+      console.log(photo.file_id);
+      console.log("=================================");
+
+      return;
+      }
       const msg = update?.message;
 
       if (!msg) return;
