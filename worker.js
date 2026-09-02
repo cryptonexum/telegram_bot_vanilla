@@ -91,7 +91,10 @@ async function startWorker() {
       console.log("🔥 JOB RECEIVED");
 
       const update = job.data;
-      if (msg.photo) {
+    
+      const msg = update?.message;
+
+        if (msg.photo) {
       const photo = msg.photo[msg.photo.length - 1];
 
       console.log("=================================");
@@ -101,7 +104,6 @@ async function startWorker() {
 
       return;
       }
-      const msg = update?.message;
 
       if (!msg) return;
 
