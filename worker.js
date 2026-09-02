@@ -169,7 +169,8 @@ async function startWorker() {
           username,
           referred_by: referrerId,
           source,
-          welcomeUser: true
+          welcomeUser: true,
+          total_balance:0
         });
 
         // ================= REF NOTIFY =================
