@@ -51,19 +51,23 @@ app.get("/", (req, res) => {
 
 // ================= CLUSTER =================
 
-if (cluster.isPrimary) {
-  const cpus = os.cpus().length;
+http.createServer(app).listen(PORT, () => {
+  console.log(`HTTP Server running on port ${PORT}`);
+});
 
-  console.log(`Master running. CPUs: ${cpus}`);
+// if (cluster.isPrimary) {
+//   const cpus = os.cpus().length;
 
-  for (let i = 0; i < cpus; i++) {
-    cluster.fork();
-  }
+//   console.log(`Master running. CPUs: ${cpus}`);
 
-  cluster.on("exit", () => cluster.fork());
+//   for (let i = 0; i < cpus; i++) {
+//     cluster.fork();
+//   }
 
-} else {
-  http.createServer(app).listen(PORT, () => {
-    console.log(`HTTP Worker ${process.pid} running`);
-  });
-}
+//   cluster.on("exit", () => cluster.fork());
+
+// } else {
+//   http.createServer(app).listen(PORT, () => {
+//     console.log(`HTTP Worker ${process.pid} running`);
+//   });
+// }
