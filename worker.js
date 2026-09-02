@@ -168,7 +168,8 @@ async function startWorker() {
           fullName: `${firstName} ${lastName}`.trim(),
           username,
           referred_by: referrerId,
-          source
+          source,
+          welcomeUser: true
         });
 
         // ================= REF NOTIFY =================
@@ -209,7 +210,7 @@ async function startWorker() {
         const keyboard = [
           [
             {
-              text: "⛏️ Start Mining Now",
+              text: "⛏️ Mine TonWon Now",
               web_app: {
                 url: referralLink
               }
