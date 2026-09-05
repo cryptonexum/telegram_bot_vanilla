@@ -210,6 +210,16 @@ async function startWorker() {
 `;
         const keyboard = [
           [
+          {
+            text: '🌐 Twitter',
+            url: 'https://x.com/tonwonpro'
+          },
+          {
+            text: '🔗 Announcements',
+            url: 'https://t.me/tonwon_announcements'
+          }
+        ],
+          [
             {
               text: "⛏️ Mine TonWon Now",
               web_app: {
