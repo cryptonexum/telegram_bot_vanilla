@@ -221,7 +221,7 @@ async function startWorker() {
         ],
           [
             {
-              text: "⛏️ Mine TonWon Now",
+              text: '👉 Start Earning',
               web_app: {
                 url: referralLink
               }
